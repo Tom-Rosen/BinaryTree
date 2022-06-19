@@ -1,26 +1,12 @@
-///////////////////////// CUMULATIVE QUIZ FILE HEADER //////////////////////////
-// Full Name: Tom Rosen
-// Campus ID: 908 190 4204
-// WiscEmail: trrosen@wisc.edu
-////////////////////////////////////////////////////////////////////////////////
-
-// Complete the missing (blank) sections of code in this EmployerRecords class using a binary search
-// tree to store their contact information (Customer objects).
-// Note that the comparison of the Customer objects is based on the lexicographic ordering of
-// the names (case sensitive comparison of the names).
-// This means that this employer records BST is ordered lexicographically with respect to the names
-// of its entries. The toString.compareTo() compares strings in that lexicographic order.
-// Any exceptions thrown do not need messages.
-// You are NOT allowed to add any instance field not already defined in the starting code of the
-// PhoneBook class.
-// You are NOT allowed to make any change to the signatures of the provided methods.
+// Name: Tom Rosen
+// Email: trrosen @wisc.edu 
 
 /**
  * This class represents a BST of Customer objects. The search key in this BST
  * is the name of the entries.
  */
 public class EmployerRecords {
-	private BSTNode<Employer> root; // see exam reference section listing for BSTNode<T>
+	private BSTNode<Employer> root; 
 
 	/**
 	 * Checks whether this BST is empty
@@ -31,10 +17,9 @@ public class EmployerRecords {
 		if (root == null) {
 			return true;
 		}
-		return false; // TODO CHANGE THIS: included to avoid compiler errors
+		return false; 
 	}
 
-	// MAKE SURE TO SAVE your source file before uploading it to gradescope.
 	/**
 	 * Recursive helper method to insert a new entry into this EmployerRecords
 	 * 
@@ -45,15 +30,6 @@ public class EmployerRecords {
 	 *                               entry
 	 */
 	protected static BSTNode<Employer> insertHelper(Employer employer, BSTNode<Employer> current) {
-		// DO NOT CHECK whether employer is null or not. The method will automatically
-		// throw
-		// a NullPointerException if this case occurs.
-
-		// TODO complete the implementation of this method
-
-		// base case1: the current subtree is empty (current is null) --> add employer,
-		// and
-		// return the new root (current) of this subtree
 		
 		BSTNode<Employer> node = new BSTNode<Employer>(employer);
 		if (current == null) {
@@ -67,10 +43,6 @@ public class EmployerRecords {
 			throw new IllegalStateException("Adding match to BST");
 		}
 		
-
-			// recursive case: recurse left
-			// try to insert employer to the left subtree
-			// Hint: node.setLeft(/* recursive call */);
 			if (employer.compareTo(current.getData()) < 0) {
 				if (current.getLeft() == null) {
 					current.setLeft(new BSTNode<Employer>(employer));
@@ -86,10 +58,6 @@ public class EmployerRecords {
 					insertHelper(employer, current.getRight());
 				}
 			}
-		
-		// else recursive case: recurse right
-		// try to insert employer to the right subtree
-		// Hint: node.setRight(/* recursive call */);
 
 		 return current; // return the root of this subtree
 	}
@@ -142,7 +110,6 @@ public class EmployerRecords {
 		}
 	}
 
-	// MAKE SURE TO SAVE your source file before uploading it to gradescope.
 
 	/**
 	 * Searches for the phone number associated with a particular name in this
@@ -189,7 +156,6 @@ public class EmployerRecords {
 		}
 	}
 
-	// MAKE SURE TO SAVE your source file before uploading it to gradescope.
 
 	/**
 	 * Checks the correctness of insert(), search(), and size() methods
