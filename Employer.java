@@ -1,4 +1,5 @@
-// DO NOT SUBMIT THIS SOURCE FILE TO GRADESCOPE
+// Name: Tom Rosen
+// Email: trrosen @wisc.edu 
 public class Employer implements Comparable<Employer> { // Employer information
   private String name; // name of this employer
   private String address; // address of this employer
